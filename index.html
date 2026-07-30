@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TMS Consultoria | Desenvolvimento de Software & Soluções Tech</title>
+  <meta name="description" content="Engenharia e desenvolvimento de software sob medida, consultoria técnica PJ e soluções SaaS de alta performance.">
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Ícones Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  
+  <!-- Configuração de cores do Tailwind -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              500: '#0284c7',
+              600: '#0369a1',
+              900: '#0c4a6e',
+              dark: '#0b0f19',
+              card: '#111827'
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-brand-dark text-slate-300 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+  <!-- Header / Navbar -->
+  <header class="fixed top-0 w-full bg-brand-dark/80 backdrop-blur-md border-b border-slate-800 z-50">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="#" class="text-xl font-bold text-white tracking-tight flex items-center gap-2">
+        <span class="text-brand-500">&lt;</span>TMS Consultoria<span class="text-brand-500">/&gt;</span>
+      </a>
+      
+      <nav class="hidden md:flex gap-8 text-sm font-medium">
+        <a href="#servicos" class="hover:text-brand-500 transition-colors">Serviços</a>
+        <a href="#produtos" class="hover:text-brand-500 transition-colors">SaaS & Produtos</a>
+        <a href="#sobre" class="hover:text-brand-500 transition-colors">Sobre</a>
+      </nav>
+
+      <a href="https://wa.me/5548984728531?text=Ol%C3%A1!%20Gostaria%20de%20falar%20sobre%20um%20projeto%20com%20a%20TMS%20Consultoria." 
+         target="_blank" 
+         class="bg-brand-500 hover:bg-brand-600 text-white px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2 transition-all">
+        <i class="ph ph-whatsapp-logo text-lg"></i>
+        <span>Falar no WhatsApp</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="pt-32 pb-20 px-4 max-w-6xl mx-auto text-center md:text-left md:flex md:items-center md:justify-between gap-12">
+    <div class="md:w-3/5 space-y-6">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-500 text-xs font-semibold">
+        <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+        Disponível para Projetos e Contratos PJ
+      </div>
+      <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">
+        Engenharia de Software sob medida para o seu negócio
+      </h1>
+      <p class="text-slate-400 text-lg max-w-2xl">
+        Desenvolvimento de sistemas robustos, arquitetura escalável e criação de SaaS sob medida. Transformo necessidades complexas de negócio em código eficiente.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 pt-2">
+        <a href="https://wa.me/5548984728531?text=Ol%C3%A1!%20Gostaria%20de%20falar%20sobre%20um%20projeto%20com%20a%20TMS%20Consultoria." 
+           target="_blank" 
+           class="bg-brand-500 hover:bg-brand-600 text-white px-6 py-3.5 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-brand-500/20 transition-all">
+          <i class="ph ph-whatsapp-logo text-xl"></i>
+          Iniciar uma Conversa
+        </a>
+        <a href="#servicos" 
+           class="border border-slate-700 hover:border-slate-500 text-slate-200 px-6 py-3.5 rounded-xl font-semibold flex items-center justify-center transition-all">
+          Ver Serviços
+        </a>
+      </div>
+    </div>
+    
+    <!-- Visual Element / Code Card -->
+    <div class="md:w-2/5 mt-12 md:mt-0">
+      <div class="bg-brand-card border border-slate-800 rounded-2xl p-5 shadow-2xl relative font-mono text-xs">
+        <div class="flex gap-2 mb-4">
+          <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+          <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+          <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+        </div>
+        <p class="text-slate-500">// TMS Consultoria - Soluções Tech</p>
+        <p class="text-purple-400 mt-2">const <span class="text-blue-400">servicos</span> = {</p>
+        <p class="text-slate-300 pl-4">desenvolvimento: <span class="text-green-400">'Sistemas Web & Mobile'</span>,</p>
+        <p class="text-slate-300 pl-4">consultoriaPJ: <span class="text-green-400">'Alocação & Arquitetura'</span>,</p>
+        <p class="text-slate-300 pl-4">saas: <span class="text-green-400">'Soluções Próprias B2B'</span>,</p>
+        <p class="text-slate-300 pl-4">qualidade: <span class="text-green-400">'Escalabilidade & Performance'</span></p>
+        <p class="text-purple-400">};</p>
+        <p class="text-purple-400 mt-2">function <span class="text-blue-400">gerarResultado</span>() {</p>
+        <p class="text-slate-300 pl-4"><span class="text-purple-400">return</span> <span class="text-green-400">'Software entregue no prazo'</span>;</p>
+        <p class="text-purple-400">}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de Serviços -->
+  <section id="servicos" class="py-20 border-t border-slate-800/60 bg-slate-950/40">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-3xl font-bold text-white mb-4">Como posso ajudar a sua empresa</h2>
+        <p class="text-slate-400">Atuação ponta a ponta na criação e evolução de produtos digitais.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="bg-brand-card border border-slate-800 p-8 rounded-2xl hover:border-brand-500/50 transition-all group">
+          <div class="w-12 h-12 bg-brand-500/10 text-brand-500 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="ph ph-code shadow-sm"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Desenvolvimento PJ</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Atuação técnica especializada para sua equipe. Integração rápida em squads, desenvolvimento de funcionalidades complexas e melhoria contínua de código.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-brand-card border border-slate-800 p-8 rounded-2xl hover:border-brand-500/50 transition-all group">
+          <div class="w-12 h-12 bg-brand-500/10 text-brand-500 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="ph ph-buildings"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Sistemas Fechados sob Medida</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Construção de software sob demanda para automatizar processos internos da sua empresa, desde a concepção de arquitetura até o deploy.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-brand-card border border-slate-800 p-8 rounded-2xl hover:border-brand-500/50 transition-all group">
+          <div class="w-12 h-12 bg-brand-500/10 text-brand-500 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="ph ph-cloud-arrow-up"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Arquitetura & SaaS</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Modelagem e desenvolvimento de produtos SaaS escaláveis, com foco em segurança, APIs eficientes e infraestrutura resiliente.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de SaaS / Produtos -->
+  <section id="produtos" class="py-20 border-t border-slate-800/60">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-3xl font-bold text-white mb-4">SaaS & Produtos Próprios</h2>
+        <p class="text-slate-400">Soluções independentes desenvolvidas e mantidas pela TMS Consultoria.</p>
+      </div>
+
+      <div class="bg-brand-card border border-slate-800 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="space-y-4 md:w-2/3">
+          <span class="text-xs font-semibold uppercase tracking-wider text-brand-500 bg-brand-500/10 px-3 py-1 rounded-md">Em Breve</span>
+          <h3 class="text-2xl font-bold text-white">Novas ferramentas em desenvolvimento</h3>
+          <p class="text-slate-400 leading-relaxed">
+            Estamos construindo uma suíte de microsserviços e soluções SaaS focadas em produtividade empresarial e automação de processos.
+          </p>
+        </div>
+        <div>
+          <a href="https://wa.me/5548984728531?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20os%20SaaS%20da%20TMS%20Consultoria." 
+             target="_blank" 
+             class="whitespace-nowrap border border-brand-500 text-brand-500 hover:bg-brand-500 hover:text-white px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2">
+            Quero Acompanhar
+            <i class="ph ph-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Sobre -->
+  <section id="sobre" class="py-20 border-t border-slate-800/60 bg-slate-950/40">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row gap-12 items-center">
+      <div class="md:w-1/2 space-y-6">
+        <h2 class="text-3xl font-bold text-white">Sobre a TMS Consultoria</h2>
+        <p class="text-slate-400 leading-relaxed">
+          A TMS Consultoria nasceu para entregar código limpo, arquiteturas robustas e soluções de software que resolvem dores reais de empresas. 
+        </p>
+        <p class="text-slate-400 leading-relaxed">
+          Atuando diretamente no desenvolvimento de sistemas web e soluções sob medida, o foco é sempre garantir prazos, transparência na comunicação e alta qualidade técnica.
+        </p>
+      </div>
+      <div class="md:w-1/2 grid grid-cols-2 gap-4 w-full">
+        <div class="bg-brand-card p-6 rounded-2xl border border-slate-800 text-center">
+          <p class="text-3xl font-extrabold text-brand-500 mb-1">+7 anos</p>
+          <p class="text-slate-400 text-sm">Experiência Tech</p>
+        </div>
+        <div class="bg-brand-card p-6 rounded-2xl border border-slate-800 text-center">
+          <p class="text-3xl font-extrabold text-brand-500 mb-1">Full Stack</p>
+          <p class="text-slate-400 text-sm">Especialização</p>
+        </div>
+        <div class="bg-brand-card p-6 rounded-2xl border border-slate-800 text-center">
+          <p class="text-3xl font-extrabold text-brand-500 mb-1">100%</p>
+          <p class="text-slate-400 text-sm">Foco em Resultados</p>
+        </div>
+        <div class="bg-brand-card p-6 rounded-2xl border border-slate-800 text-center">
+          <p class="text-3xl font-extrabold text-brand-500 mb-1">PJ</p>
+          <p class="text-slate-400 text-sm">Contratação Direta</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="py-20 border-t border-slate-800/60 text-center px-4">
+    <div class="max-w-3xl mx-auto space-y-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-white">Precisa de um desenvolvedor PJ ou de um sistema sob medida?</h2>
+      <p class="text-slate-400">Vamos conversar sobre a sua demanda técnica e estruturar a melhor solução.</p>
+      <div class="pt-4">
+        <a href="https://wa.me/5548984728531?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20TMS%20Consultoria%20e%20gostaria%20de%20um%20or%C3%A7amento." 
+           target="_blank" 
+           class="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg shadow-brand-500/20 transition-all">
+          <i class="ph ph-whatsapp-logo text-2xl"></i>
+          Falar via WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800/80 py-8 text-center text-slate-500 text-sm">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p>© 2026 TMS Consultoria. Todos os direitos reservados.</p>
+      <p>Hospedado no GitHub Pages</p>
+    </div>
+  </footer>
+
+</body>
+</html>
