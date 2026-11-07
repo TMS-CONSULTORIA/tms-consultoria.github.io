@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" fill="none">
+    <rect width="600" height="320" fill="#090D16"/>
+    <circle cx="480" cy="70" r="150" fill="#F43F5E" fill-opacity="0.1"/>
+    <rect x="28" y="24" width="544" height="272" rx="12" fill="#0F172A" stroke="#1E293B" stroke-width="1.5"/>
+    <text x="48" y="54" fill="#FB7185" font-family="monospace" font-size="11" font-weight="700">MZA MARKETING • BRANDING EXECUTIVO &amp; TELEMETRIA DE CONVERSÃO</text>
+    <!-- Hero Preview Box -->
+    <rect x="48" y="70" width="300" height="202" rx="10" fill="#111827" stroke="#1E293B"/>
+    <rect x="68" y="92" width="96" height="18" rx="9" fill="#F43F5E" fill-opacity="0.2"/>
+    <text x="80" y="105" fill="#FDA4AF" font-family="sans-serif" font-size="9" font-weight="700">MARCA PESSOAL</text>
+    <text x="68" y="136" fill="#F8FAFC" font-family="sans-serif" font-size="17" font-weight="800">Transformando essência</text>
+    <text x="68" y="158" fill="#F8FAFC" font-family="sans-serif" font-size="17" font-weight="800">em posicionamento.</text>
+    <rect x="68" y="182" width="148" height="34" rx="8" fill="#E11D48"/>
+    <text x="86" y="203" fill="#FFFFFF" font-family="sans-serif" font-size="11" font-weight="700">Diagnóstico de Marca</text>
+    <!-- Analytics / SEO Score Cards -->
+    <rect x="364" y="70" width="188" height="94" rx="10" fill="#111827" stroke="#1E293B"/>
+    <text x="382" y="96" fill="#94A3B8" font-family="sans-serif" font-size="10" font-weight="700">CORE WEB VITALS &amp; SEO</text>
+    <text x="382" y="134" fill="#10B981" font-family="monospace" font-size="28" font-weight="800">99 / 100</text>
+    <text x="382" y="152" fill="#64748B" font-family="monospace" font-size="10">OpenGraph + Schema</text>
+    <rect x="364" y="178" width="188" height="94" rx="10" fill="#111827" stroke="#1E293B"/>
+    <text x="382" y="204" fill="#94A3B8" font-family="sans-serif" font-size="10" font-weight="700">INSTRUMENTAÇÃO</text>
+    <text x="382" y="228" fill="#E2E8F0" font-family="monospace" font-size="11">• Google Analytics 4</text>
+    <text x="382" y="246" fill="#E2E8F0" font-family="monospace" font-size="11">• Microsoft Clarity</text>
+    <text x="382" y="264" fill="#E2E8F0" font-family="monospace" font-size="11">• Meta Pixel Events</text>
+  </svg>

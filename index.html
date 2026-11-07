@@ -3,351 +3,930 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TMS Consultoria | Desenvolvimento de Software & Soluções Tech</title>
-  <meta name="description" content="Engenharia e desenvolvimento de software sob medida, consultoria técnica PJ e soluções SaaS de alta performance.">
-  <meta property="og:title" content="TMS Consultoria | Desenvolvimento de Software & Soluções Tech">
-  <meta property="og:description" content="Soluções digitais sob medida para empresas que querem automatizar processos, escalar operações e entregar produtos com qualidade.">
+  <title>TMS Consultoria | Engenharia de Software, Arquitetura & Soluções SaaS</title>
+  <meta name="description" content="Consultoria em engenharia de software, desenvolvimento de sistemas corporativos sob medida, alocação técnica B2B e produtos SaaS de alta performance.">
+  <meta property="og:title" content="TMS Consultoria | Engenharia de Software & Soluções Corporativas">
+  <meta property="og:description" content="Arquitetura sólida, sistemas sob medida e produtos digitais construídos para escalar operações empresariais com previsibilidade e segurança.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/logo.png">
+  <meta property="og:image" content="assets/og-banner.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:site_name" content="TMS Consultoria">
-  <link rel="icon" type="image/png" href="assets/logo.png">
-  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="assets/og-banner.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Ícones Phosphor Icons -->
+
+  <!-- Phosphor Icons -->
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
-  
-  <!-- Configuração de cores do Tailwind -->
+
   <script>
     tailwind.config = {
       theme: {
         extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
           colors: {
             brand: {
               50: '#f0f7ff',
               100: '#e0effe',
+              400: '#38bdf8',
               500: '#0284c7',
               600: '#0369a1',
+              700: '#075985',
               900: '#0c4a6e',
-              dark: '#0b0f19',
-              card: '#111827'
+              dark: '#060911',
+              surface: '#0d1322',
+              card: '#111827',
+              border: '#1e293b'
             }
           }
         }
       }
     }
   </script>
+
+  <style>
+    .bg-grid-pattern {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(148, 163, 184, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(148, 163, 184, 0.04) 1px, transparent 1px);
+    }
+    .glass-nav {
+      background: rgba(6, 9, 17, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .glass-card {
+      background: linear-gradient(180deg, rgba(17, 24, 39, 0.88) 0%, rgba(13, 19, 34, 0.96) 100%);
+      backdrop-filter: blur(10px);
+    }
+    .hero-glow {
+      background: radial-gradient(circle at 50% 0%, rgba(2, 132, 199, 0.18) 0%, rgba(6, 9, 17, 0) 70%);
+    }
+    .project-card {
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px -15px rgba(2, 132, 199, 0.18);
+    }
+    .logo-glow {
+      filter: drop-shadow(0 0 12px rgba(56, 189, 248, 0.28));
+    }
+  </style>
 </head>
-<body class="bg-brand-dark text-slate-300 font-sans antialiased selection:bg-brand-500 selection:text-white">
+<body class="bg-brand-dark text-slate-300 font-sans antialiased selection:bg-brand-500 selection:text-white overflow-x-hidden">
+
+  <!-- Ambient Top Glow -->
+  <div class="fixed inset-x-0 top-0 h-96 hero-glow pointer-events-none z-0"></div>
 
   <!-- Header / Navbar -->
-  <header class="fixed top-0 w-full bg-brand-dark/80 backdrop-blur-md border-b border-slate-800 z-50">
-    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-      <a href="#" class="text-xl font-bold text-white tracking-tight flex items-center gap-2">
-        <img src="assets/logo.png" alt="TMS Consultoria Logo" class="h-10 w-auto rounded-md">
-        <span>TMS Consultoria</span>
+  <header class="fixed top-0 w-full glass-nav border-b border-slate-800/80 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3.5 group focus:outline-none">
+        <div class="relative flex items-center justify-center h-11 px-2.5 rounded-xl bg-slate-900/90 border border-slate-800 group-hover:border-brand-400/50 transition-all shadow-inner">
+          <img src="assets/logo-mark.png" alt="Logo TMS Consultoria" width="76" height="34" class="h-6 w-auto object-contain logo-glow transition-transform group-hover:scale-105">
+        </div>
+        <div class="flex flex-col">
+          <span class="text-lg font-extrabold text-white tracking-tight leading-none">Consultoria</span>
+          <span class="text-[10px] font-mono uppercase tracking-widest text-brand-400 mt-1">Software & Architecture</span>
+        </div>
       </a>
-      
-      <nav class="hidden md:flex gap-8 text-sm font-medium">
-        <a href="#servicos" class="hover:text-brand-500 transition-colors">Serviços</a>
-        <a href="#processo" class="hover:text-brand-500 transition-colors">Processo</a>
-        <a href="#produtos" class="hover:text-brand-500 transition-colors">SaaS & Produtos</a>
-        <a href="#sobre" class="hover:text-brand-500 transition-colors">Sobre</a>
+
+      <!-- Desktop Nav -->
+      <nav aria-label="Navegação Principal" class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#solucoes" class="hover:text-white transition-colors">Soluções</a>
+        <a href="#projetos" class="hover:text-white transition-colors">Portfólio & Cases</a>
+        <a href="#metodologia" class="hover:text-white transition-colors">Metodologia</a>
+        <a href="#stack" class="hover:text-white transition-colors">Tecnologias</a>
+        <a href="#empresa" class="hover:text-white transition-colors">A Consultoria</a>
       </nav>
 
-      <a href="https://wa.me/5548984728531?text=Ol%C3%A1!%20Gostaria%20de%20falar%20sobre%20um%20projeto%20com%20a%20TMS%20Consultoria." 
-         target="_blank" 
-         class="bg-brand-500 hover:bg-brand-600 text-white px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2 transition-all">
-        <i class="ph ph-whatsapp-logo text-lg"></i>
-        <span>Falar no WhatsApp</span>
-      </a>
+      <div class="hidden md:flex items-center gap-3">
+        <a href="https://wa.me/5548984728531?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20conversa%20sobre%20um%20projeto%20com%20a%20TMS%20Consultoria."
+           target="_blank"
+           rel="noopener noreferrer"
+           class="bg-brand-500 hover:bg-brand-600 text-white px-5 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-2 shadow-lg shadow-brand-500/20 hover:shadow-brand-500/35 transition-all">
+          <i class="ph-fill ph-whatsapp-logo text-lg"></i>
+          <span>Agendar Diagnóstico</span>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" type="button" aria-label="Abrir menu" aria-expanded="false" class="md:hidden p-2.5 rounded-xl border border-slate-800 text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors">
+        <i class="ph ph-list text-2xl" id="mobile-menu-icon"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Nav Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800/80 bg-brand-surface/95 backdrop-blur-xl px-4 pt-4 pb-6 space-y-3">
+      <a href="#solucoes" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800/60">Soluções Corporativas</a>
+      <a href="#projetos" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800/60">Portfólio & Cases</a>
+      <a href="#metodologia" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800/60">Metodologia de Entrega</a>
+      <a href="#stack" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800/60">Stack Tecnológica</a>
+      <a href="#empresa" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800/60">Sobre a TMS</a>
+      <div class="pt-3 border-t border-slate-800">
+        <a href="https://wa.me/5548984728531?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20conversa%20sobre%20um%20projeto%20com%20a%20TMS%20Consultoria."
+           target="_blank"
+           rel="noopener noreferrer"
+           class="w-full bg-brand-500 hover:bg-brand-600 text-white px-5 py-3 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 shadow-lg shadow-brand-500/20">
+          <i class="ph-fill ph-whatsapp-logo text-lg"></i>
+          <span>Falar com Especialista</span>
+        </a>
+      </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="pt-32 pb-10 px-4 max-w-6xl mx-auto text-center md:text-left md:flex md:items-center md:justify-between gap-12">
-    <div class="md:w-3/5 space-y-6">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-500 text-xs font-semibold">
-        <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
-        Disponível para projetos, SaaS e contratação PJ
-      </div>
-      <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">
-        Software que resolve problemas reais e cresce com sua empresa
-      </h1>
-      <p class="text-slate-400 text-lg max-w-2xl">
-        Desenvolvo sistemas web, arquitetura escalável e soluções digitais que conectam tecnologia, processos e resultado de negócio.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 pt-2">
-        <a href="https://wa.me/5548984728531?text=Ol%C3%A1!%20Gostaria%20de%20falar%20sobre%20um%20projeto%20com%20a%20TMS%20Consultoria." 
-           target="_blank" 
-           class="bg-brand-500 hover:bg-brand-600 text-white px-6 py-3.5 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-brand-500/20 transition-all">
-          <i class="ph ph-whatsapp-logo text-xl"></i>
-          Iniciar uma Conversa
-        </a>
-        <a href="#servicos" 
-           class="border border-slate-700 hover:border-slate-500 text-slate-200 px-6 py-3.5 rounded-xl font-semibold flex items-center justify-center transition-all">
-          Ver Serviços
-        </a>
-      </div>
-    </div>
-    
-    <!-- Visual Element / Code Card -->
-    <div class="md:w-2/5 mt-12 md:mt-0">
-      <div class="bg-brand-card border border-slate-800 rounded-2xl p-5 shadow-2xl relative font-mono text-xs">
-        <div class="flex gap-2 mb-4">
-          <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
-          <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-          <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
-        </div>
-        <p class="text-slate-500">// TMS Consultoria - Soluções Tech</p>
-        <p class="text-purple-400 mt-2">const <span class="text-blue-400">servicos</span> = {</p>
-        <p class="text-slate-300 pl-4">desenvolvimento: <span class="text-green-400">'Sistemas Web'</span>,</p>
-        <p class="text-slate-300 pl-4">consultoriaPJ: <span class="text-green-400">'Arquitetura & time'</span>,</p>
-        <p class="text-slate-300 pl-4">saas: <span class="text-green-400">'Produtos B2B'</span>,</p>
-        <p class="text-slate-300 pl-4">resultado: <span class="text-green-400">'Escalável & seguro'</span></p>
-        <p class="text-purple-400">};</p>
-        <p class="text-purple-400 mt-2">function <span class="text-blue-400">gerarResultado</span>() {</p>
-        <p class="text-slate-300 pl-4"><span class="text-purple-400">return</span> <span class="text-green-400">'Entrega com clareza e qualidade'</span>;</p>
-        <p class="text-purple-400">}</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="px-4 pb-20">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
-      <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 text-center">
-        <p class="text-3xl font-extrabold text-white">+7 anos</p>
-        <p class="text-slate-400 mt-2">de experiência em tecnologia e negócios</p>
-      </div>
-      <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 text-center">
-        <p class="text-3xl font-extrabold text-white">Projetos</p>
-        <p class="text-slate-400 mt-2">personalizados para processos críticos</p>
-      </div>
-      <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 text-center">
-        <p class="text-3xl font-extrabold text-white">Entrega</p>
-        <p class="text-slate-400 mt-2">focada em performance, clareza e eficiência</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Seção de Serviços -->
-  <section id="servicos" class="py-20 border-t border-slate-800/60 bg-slate-950/40">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <h2 class="text-3xl font-bold text-white mb-4">Como posso ajudar a sua empresa</h2>
-        <p class="text-slate-400">Atuação ponta a ponta na criação e evolução de produtos digitais.</p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- Card 1 -->
-        <div class="bg-brand-card border border-slate-800 p-8 rounded-2xl hover:border-brand-500/50 transition-all group">
-          <div class="w-12 h-12 bg-brand-500/10 text-brand-500 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-            <i class="ph ph-code shadow-sm"></i>
+  <main class="relative z-10">
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 px-4 sm:px-6 lg:px-8 bg-grid-pattern border-b border-slate-800/60">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+        
+        <!-- Left Column: Copy -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/25 text-brand-400 text-xs font-semibold tracking-wide">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            ENGENHARIA DE SOFTWARE B2B • CONSULTORIA & SAAS
           </div>
-          <h3 class="text-xl font-bold text-white mb-3">Desenvolvimento PJ</h3>
-          <p class="text-slate-400 text-sm leading-relaxed">
-            Atuação técnica especializada para sua equipe. Integração rápida em squads, desenvolvimento de funcionalidades complexas e melhoria contínua de código.
-          </p>
-        </div>
 
-        <!-- Card 2 -->
-        <div class="bg-brand-card border border-slate-800 p-8 rounded-2xl hover:border-brand-500/50 transition-all group">
-          <div class="w-12 h-12 bg-brand-500/10 text-brand-500 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-            <i class="ph ph-buildings"></i>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12]">
+            Arquitetura sólida e software sob medida para <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-sky-200">operações que precisam escalar.</span>
+          </h1>
+
+          <p class="text-slate-300 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0 font-normal">
+            Projetamos, desenvolvemos e evoluímos sistemas web críticos, plataformas SaaS e integrações complexas. Atuamos lado a lado com a sua liderança para transformar gargalos operacionais em produtos digitais confiáveis.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 pt-3 justify-center lg:justify-start">
+            <a href="https://wa.me/5548984728531?text=Ol%C3%A1!%20Gostaria%20de%20discutir%20uma%20demanda%20t%C3%A9cnica%20com%20a%20TMS%20Consultoria."
+               target="_blank"
+               rel="noopener noreferrer"
+               class="bg-brand-500 hover:bg-brand-600 text-white px-7 py-4 rounded-xl font-bold text-base flex items-center justify-center gap-2.5 shadow-xl shadow-brand-500/20 hover:shadow-brand-500/35 transition-all">
+              <i class="ph-fill ph-whatsapp-logo text-xl"></i>
+              Solicitar Proposta Técnica
+            </a>
+            <a href="#projetos"
+               class="bg-slate-900/90 hover:bg-slate-800 border border-slate-700/80 hover:border-slate-600 text-slate-100 px-7 py-4 rounded-xl font-semibold text-base flex items-center justify-center gap-2 transition-all">
+              <span>Conhecer Projetos Entregues</span>
+              <i class="ph ph-arrow-down-right text-lg text-brand-400"></i>
+            </a>
           </div>
-          <h3 class="text-xl font-bold text-white mb-3">Sistemas Fechados sob Medida</h3>
-          <p class="text-slate-400 text-sm leading-relaxed">
-            Construção de software sob demanda para automatizar processos internos da sua empresa, desde a concepção de arquitetura até o deploy.
-          </p>
-        </div>
 
-        <!-- Card 3 -->
-        <div class="bg-brand-card border border-slate-800 p-8 rounded-2xl hover:border-brand-500/50 transition-all group">
-          <div class="w-12 h-12 bg-brand-500/10 text-brand-500 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-            <i class="ph ph-cloud-arrow-up"></i>
+          <!-- Trust Highlights -->
+          <div class="pt-6 grid grid-cols-3 gap-4 border-t border-slate-800/80 max-w-xl mx-auto lg:mx-0 text-left">
+            <div>
+              <p class="text-2xl sm:text-3xl font-extrabold text-white">+10 anos</p>
+              <p class="text-xs sm:text-sm text-slate-400 mt-0.5">Liderança & Engenharia</p>
+            </div>
+            <div>
+              <p class="text-2xl sm:text-3xl font-extrabold text-white">Ponta a Ponta</p>
+              <p class="text-xs sm:text-sm text-slate-400 mt-0.5">Da Arquitetura ao Deploy</p>
+            </div>
+            <div>
+              <p class="text-2xl sm:text-3xl font-extrabold text-white">B2B / PJ</p>
+              <p class="text-xs sm:text-sm text-slate-400 mt-0.5">Contratação Ágil e Direta</p>
+            </div>
           </div>
-          <h3 class="text-xl font-bold text-white mb-3">Arquitetura & SaaS</h3>
-          <p class="text-slate-400 text-sm leading-relaxed">
-            Modelagem e desenvolvimento de produtos SaaS escaláveis, com foco em segurança, APIs eficientes e infraestrutura resiliente.
+        </div>
+
+        <!-- Right Column: Architectural Telemetry & Live Logs Panel -->
+        <div class="lg:col-span-5">
+          <div class="glass-card border border-slate-800 rounded-2xl p-6 shadow-2xl relative overflow-hidden">
+            <div class="absolute -right-12 -top-12 w-40 h-40 bg-brand-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+            <!-- Window Bar with Interactive Tabs (Spec vs Telemetry Logs) -->
+            <div class="flex items-center justify-between pb-4 mb-5 border-b border-slate-800 gap-2">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-rose-500/80"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+              </div>
+              <div class="flex items-center bg-slate-900/90 p-1 rounded-lg border border-slate-800 text-[11px] font-mono">
+                <button type="button" id="tab-spec-btn" class="px-2.5 py-1 rounded-md bg-brand-500/20 text-brand-400 font-semibold transition-all">
+                  architecture.ts
+                </button>
+                <button type="button" id="tab-logs-btn" class="px-2.5 py-1 rounded-md text-slate-400 hover:text-slate-200 transition-all">
+                  telemetry.log
+                </button>
+              </div>
+              <span class="hidden sm:inline-block px-2 py-0.5 text-[10px] font-mono uppercase bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded">Online</span>
+            </div>
+
+            <!-- Panel 1: Code Spec -->
+            <div id="panel-spec" class="font-mono text-xs sm:text-[13px] leading-relaxed space-y-1.5 text-slate-300 min-h-[190px]">
+              <p class="text-slate-500">// Escopo de atuação corporativa TMS Consultoria</p>
+              <p><span class="text-sky-400">export const</span> <span class="text-white font-semibold">engenhariaCorporativa</span> = {</p>
+              <p class="pl-4">foco: <span class="text-emerald-400">'Sistemas Críticos, SaaS & IA Aplicada'</span>,</p>
+              <p class="pl-4">arquitetura: [<span class="text-amber-300">'Microsserviços'</span>, <span class="text-amber-300">'APIs REST/WebSockets'</span>, <span class="text-amber-300">'Cloud'</span>],</p>
+              <p class="pl-4">qualidade: {</p>
+              <p class="pl-8">seguranca: <span class="text-emerald-400">'DevSecOps & Auditoria de Código'</span>,</p>
+              <p class="pl-8">disponibilidade: <span class="text-sky-300">99.9</span>,</p>
+              <p class="pl-8">entrega: <span class="text-emerald-400">'Ciclos curtos e rastreáveis'</span></p>
+              <p class="pl-4">}</p>
+              <p>};</p>
+            </div>
+
+            <!-- Panel 2: Structured Execution Logs -->
+            <div id="panel-logs" class="hidden font-mono text-[11px] sm:text-xs leading-relaxed space-y-2 text-slate-300 min-h-[190px]">
+              <p><span class="text-slate-500">[14:00:01]</span> <span class="text-sky-400">[INFO]</span> Inicializando pipeline de governança TMS...</p>
+              <p><span class="text-slate-500">[14:00:02]</span> <span class="text-emerald-400">[PASS]</span> DevSecOps pre-commit scan: 0 segredos expostos</p>
+              <p><span class="text-slate-500">[14:00:03]</span> <span class="text-sky-400">[SYNC]</span> PostgreSQL &amp; Redis cluster: latência 1.8ms</p>
+              <p><span class="text-slate-500">[14:00:04]</span> <span class="text-purple-400">[LIVE]</span> WebSocket PCM stream ativo (&lt;210ms RTT)</p>
+              <p><span class="text-slate-500">[14:00:05]</span> <span class="text-emerald-400">[READY]</span> Build de produção verificado • SLA 99.9%</p>
+              <div class="pt-1 flex items-center gap-2 text-emerald-400">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                <span>Telemetria operacional ativa em todos os serviços</span>
+              </div>
+            </div>
+
+            <!-- Live Metrics Strip inside Card -->
+            <div class="mt-6 pt-5 border-t border-slate-800/90 grid grid-cols-2 gap-3">
+              <div class="bg-slate-900/90 border border-slate-800/80 rounded-xl p-3.5">
+                <div class="flex items-center gap-2 text-brand-400 text-xs font-semibold mb-1">
+                  <i class="ph-fill ph-shield-check text-base"></i>
+                  <span>Código Auditável</span>
+                </div>
+                <p class="text-xs text-slate-400">Testes automatizados, logs estruturados e CI/CD.</p>
+              </div>
+              <div class="bg-slate-900/90 border border-slate-800/80 rounded-xl p-3.5">
+                <div class="flex items-center gap-2 text-brand-400 text-xs font-semibold mb-1">
+                  <i class="ph-fill ph-chart-line-up text-base"></i>
+                  <span>Foco em ROI</span>
+                </div>
+                <p class="text-xs text-slate-400">Decisões técnicas orientadas a reduzir custo e retrabalho.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Seção de Soluções / Serviços -->
+    <section id="solucoes" class="py-24 px-4 sm:px-6 lg:px-8 border-b border-slate-800/60">
+      <div class="max-w-7xl mx-auto">
+        <div class="max-w-3xl mb-16">
+          <span class="text-xs font-mono uppercase tracking-widest text-brand-400 font-semibold">Frentes de Atuação</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 tracking-tight">
+            Soluções de engenharia desenhadas para a realidade do seu negócio
+          </h2>
+          <p class="text-slate-400 mt-4 text-lg leading-relaxed">
+            Combinamos visão executiva de negócios — adquirida em mais de uma década nos setores financeiro, varejista e de serviços — com execução técnica rigorosa.
           </p>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <section id="processo" class="py-20 border-t border-slate-800/60 bg-slate-950/40">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <h2 class="text-3xl font-bold text-white mb-4">Como o trabalho é conduzido</h2>
-        <p class="text-slate-400">Um processo simples, direto e orientado a resultados para evitar retrabalho e acelerar entregas.</p>
-      </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Serviço 1 -->
+          <div class="glass-card border border-slate-800/90 hover:border-brand-500/50 rounded-2xl p-8 flex flex-col justify-between transition-all group">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/20 text-brand-400 flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-500 group-hover:text-white transition-all">
+                <i class="ph ph-buildings"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3">Sistemas Corporativos Sob Medida</h3>
+              <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                Desenvolvimento completo de plataformas internas, ERPs setoriais, portais de clientes e automação de fluxos operacionais que planilhas ou softwares de prateleira não atendem.
+              </p>
+            </div>
+            <ul class="space-y-2 text-xs text-slate-300 border-t border-slate-800/80 pt-5">
+              <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-400"></i> Modelagem de domínio e regras complexas</li>
+              <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-400"></i> Integração com ERPs, gateways e APIs legadas</li>
+              <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-400"></i> Painéis executivos e relatórios em tempo real</li>
+            </ul>
+          </div>
 
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-brand-card border border-slate-800 rounded-2xl p-8">
-          <div class="text-brand-500 text-3xl font-black mb-4">01</div>
-          <h3 class="text-xl font-bold text-white mb-3">Diagnóstico</h3>
-          <p class="text-slate-400 leading-relaxed">Entendo o problema, o processo atual e a meta de negócio para definir a melhor solução e o melhor caminho de implementação.</p>
+          <!-- Serviço 2 -->
+          <div class="glass-card border border-slate-800/90 hover:border-brand-500/50 rounded-2xl p-8 flex flex-col justify-between transition-all group">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/20 text-brand-400 flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-500 group-hover:text-white transition-all">
+                <i class="ph ph-cloud-arrow-up"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3">Engenharia de Produtos SaaS & IA</h3>
+              <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                Da validação técnica do MVP à arquitetura multi-tenant em escala comercial. Construímos aplicações modernas com autenticação segura, cobrança recorrente e recursos de Inteligência Artificial.
+              </p>
+            </div>
+            <ul class="space-y-2 text-xs text-slate-300 border-t border-slate-800/80 pt-5">
+              <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-400"></i> Arquitetura Multi-tenant e controle de acesso</li>
+              <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-400"></i> Integração com LLMs, voz em tempo real e agentes</li>
+              <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-400"></i> Infraestrutura cloud otimizada para custo e escala</li>
+            </ul>
+          </div>
+
+          <!-- Serviço 3 -->
+          <div class="glass-card border border-slate-800/90 hover:border-brand-500/50 rounded-2xl p-8 flex flex-col justify-between transition-all group">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/20 text-brand-400 flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-500 group-hover:text-white transition-all">
+                <i class="ph ph-users-three"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3">Consultoria Técnica & Alocação PJ</h3>
+              <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                Reforço sênior imediato para squads de tecnologia. Atuamos na resolução de gargalos de performance, modernização de sistemas legados, definição de arquitetura e liderança técnica.
+              </p>
+            </div>
+            <ul class="space-y-2 text-xs text-slate-300 border-t border-slate-800/80 pt-5">
+              <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-400"></i> Rápida integração a times ágeis existentes</li>
+              <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-400"></i> Refatoração, revisão de código e mentoria</li>
+              <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-400"></i> Contratação B2B descomplicada e transparente</li>
+            </ul>
+          </div>
         </div>
-        <div class="bg-brand-card border border-slate-800 rounded-2xl p-8">
-          <div class="text-brand-500 text-3xl font-black mb-4">02</div>
-          <h3 class="text-xl font-bold text-white mb-3">Planejamento</h3>
-          <p class="text-slate-400 leading-relaxed">Defino arquitetura, escopo, prioridades e cronograma com comunicação clara e acompanhamento contínuo.</p>
+      </div>
+    </section>
+
+    <!-- Seção de Portfólio / Projetos Reais com Previews Visuais -->
+    <section id="projetos" class="py-24 px-4 sm:px-6 lg:px-8 bg-brand-surface/50 border-b border-slate-800/60">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-12 gap-6">
+          <div class="max-w-2xl">
+            <span class="text-xs font-mono uppercase tracking-widest text-brand-400 font-semibold">Portfólio de Engenharia</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 tracking-tight">
+              Projetos, Plataformas e Soluções Desenvolvidas
+            </h2>
+            <p class="text-slate-400 mt-3 text-base sm:text-lg">
+              Conheça os sistemas, produtos SaaS, aplicações com IA em tempo real e ferramentas de infraestrutura projetados e construídos pela TMS Consultoria.
+            </p>
+          </div>
+
+          <!-- Filter Buttons -->
+          <div class="flex flex-wrap gap-2" role="tablist" aria-label="Filtrar projetos por categoria">
+            <button type="button" data-filter="all" class="project-filter active-filter px-4 py-2 rounded-xl text-xs font-semibold bg-brand-500 text-white transition-all">
+              Todos (7)
+            </button>
+            <button type="button" data-filter="saas" class="project-filter px-4 py-2 rounded-xl text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-300 hover:border-slate-700 transition-all">
+              SaaS & Sistemas
+            </button>
+            <button type="button" data-filter="ia" class="project-filter px-4 py-2 rounded-xl text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-300 hover:border-slate-700 transition-all">
+              IA & Mobilidade
+            </button>
+            <button type="button" data-filter="devops" class="project-filter px-4 py-2 rounded-xl text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-300 hover:border-slate-700 transition-all">
+              DevOps & Performance
+            </button>
+            <button type="button" data-filter="web" class="project-filter px-4 py-2 rounded-xl text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-300 hover:border-slate-700 transition-all">
+              Web & Posicionamento
+            </button>
+          </div>
         </div>
-        <div class="bg-brand-card border border-slate-800 rounded-2xl p-8">
-          <div class="text-brand-500 text-3xl font-black mb-4">03</div>
-          <h3 class="text-xl font-bold text-white mb-3">Entrega & Evolução</h3>
-          <p class="text-slate-400 leading-relaxed">Construo, validamos, ajustamos e entrego uma solução que funciona na prática e continua evoluindo com a operação.</p>
+
+        <!-- Projects Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7" id="projects-grid">
+
+          <!-- Projeto 1: AlugaPrático -->
+          <article data-category="saas" class="project-card glass-card border border-slate-800 hover:border-brand-500/50 rounded-2xl overflow-hidden flex flex-col justify-between group">
+            <div>
+              <div class="relative overflow-hidden border-b border-slate-800/80 bg-slate-950 aspect-[15/8]">
+                <img src="assets/projects/aluga-pratico.svg" alt="Preview da plataforma SaaS AlugaPrático" width="600" height="320" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500">
+              </div>
+              <div class="p-7 pb-4">
+                <div class="flex items-center justify-between gap-2 mb-3">
+                  <span class="px-3 py-1 rounded-full text-xs font-semibold bg-brand-500/15 text-brand-400 border border-brand-500/30">
+                    SaaS B2B • Gestão Operacional
+                  </span>
+                  <i class="ph ph-package text-brand-400 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">AlugaPrático</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                  Plataforma completa para locadoras de equipamentos. Centraliza o catálogo digital de autoatendimento, controle de estoque por unidade física, calendário de reservas, gestão de manutenções preventivas, emissão de contratos e relatórios financeiros.
+                </p>
+              </div>
+            </div>
+            <div class="px-7 pb-7">
+              <div class="pt-4 border-t border-slate-800/80 flex flex-wrap gap-1.5">
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 font-mono text-[11px] border border-slate-800">React</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 font-mono text-[11px] border border-slate-800">TypeScript</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 font-mono text-[11px] border border-slate-800">Node.js</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 font-mono text-[11px] border border-slate-800">PostgreSQL</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 font-mono text-[11px] border border-slate-800">Clerk Auth</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 font-mono text-[11px] border border-slate-800">PWA</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projeto 2: DriveTalk AI -->
+          <article data-category="ia" class="project-card glass-card border border-slate-800 hover:border-brand-500/50 rounded-2xl overflow-hidden flex flex-col justify-between group">
+            <div>
+              <div class="relative overflow-hidden border-b border-slate-800/80 bg-slate-950 aspect-[15/8]">
+                <img src="assets/projects/drive-talk.svg" alt="Preview da interface automotiva DriveTalk AI" width="600" height="320" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500">
+              </div>
+              <div class="p-7 pb-4">
+                <div class="flex items-center justify-between gap-2 mb-3">
+                  <span class="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/30">
+                    IA em Tempo Real • Automotivo
+                  </span>
+                  <i class="ph ph-steering-wheel text-purple-400 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">DriveTalk AI</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                  Tutor de conversação em inglês 100% hands-free nativo para Android Auto e Apple CarPlay. Opera com streaming de voz bidirecional de baixa latência (&lt;500ms), interrupção natural (Barge-In), Audio Ducking integrado ao Waze/Maps e avaliação fonética IPA instantânea.
+                </p>
+              </div>
+            </div>
+            <div class="px-7 pb-7">
+              <div class="pt-4 border-t border-slate-800/80 flex flex-wrap gap-1.5">
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 font-mono text-[11px] border border-slate-800">Gemini Live API</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 font-mono text-[11px] border border-slate-800">Swift / CarPlay</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 font-mono text-[11px] border border-slate-800">Android Auto</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 font-mono text-[11px] border border-slate-800">WebSockets PCM</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 font-mono text-[11px] border border-slate-800">TypeScript</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projeto 3: Camp Jiu -->
+          <article data-category="saas" class="project-card glass-card border border-slate-800 hover:border-brand-500/50 rounded-2xl overflow-hidden flex flex-col justify-between group">
+            <div>
+              <div class="relative overflow-hidden border-b border-slate-800/80 bg-slate-950 aspect-[15/8]">
+                <img src="assets/projects/camp-jiu.svg" alt="Preview do placar e chaveamento Camp Jiu" width="600" height="320" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500">
+              </div>
+              <div class="p-7 pb-4">
+                <div class="flex items-center justify-between gap-2 mb-3">
+                  <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
+                    Sistema de Missão Crítica
+                  </span>
+                  <i class="ph ph-trophy text-emerald-400 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">Camp Jiu</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                  Plataforma para gestão e operação de campeonatos de Jiu-Jitsu em tempo real. Automatiza inscrições, geração algorítmica de chaveamentos (brackets com balanceamento de BYEs), painéis de pontuação para árbitros de mesa, telão público e cálculo imediato de pódio.
+                </p>
+              </div>
+            </div>
+            <div class="px-7 pb-7">
+              <div class="pt-4 border-t border-slate-800/80 flex flex-wrap gap-1.5">
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 font-mono text-[11px] border border-slate-800">Java 21</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 font-mono text-[11px] border border-slate-800">Spring Boot</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 font-mono text-[11px] border border-slate-800">Gradle</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 font-mono text-[11px] border border-slate-800">PostgreSQL</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 font-mono text-[11px] border border-slate-800">Real-Time Display</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projeto 4: Can I Run My Steam Games -->
+          <article data-category="devops" class="project-card glass-card border border-slate-800 hover:border-brand-500/50 rounded-2xl overflow-hidden flex flex-col justify-between group">
+            <div>
+              <div class="relative overflow-hidden border-b border-slate-800/80 bg-slate-950 aspect-[15/8]">
+                <img src="assets/projects/steam-checker.svg" alt="Preview do analisador de compatibilidade de hardware Steam" width="600" height="320" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500">
+              </div>
+              <div class="p-7 pb-4">
+                <div class="flex items-center justify-between gap-2 mb-3">
+                  <span class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/15 text-amber-300 border border-amber-500/30">
+                    Web App • Diagnóstico de Hardware
+                  </span>
+                  <i class="ph ph-cpu text-amber-400 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">Can I Run My Steam Games?</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                  Aplicação analítica que cruza a biblioteca Steam do usuário com múltiplos perfis de hardware (PC Windows e Apple Silicon). Inclui detecção automatizada via PowerShell, cache distribuído em Redis para alta performance e comparação detalhada de requisitos.
+                </p>
+              </div>
+            </div>
+            <div class="px-7 pb-7">
+              <div class="pt-4 border-t border-slate-800/80 flex flex-wrap gap-1.5">
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 font-mono text-[11px] border border-slate-800">Next.js</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 font-mono text-[11px] border border-slate-800">React</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 font-mono text-[11px] border border-slate-800">Redis</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 font-mono text-[11px] border border-slate-800">Steam Web API</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 font-mono text-[11px] border border-slate-800">PowerShell</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projeto 5: DockClean Smart -->
+          <article data-category="devops" class="project-card glass-card border border-slate-800 hover:border-brand-500/50 rounded-2xl overflow-hidden flex flex-col justify-between group">
+            <div>
+              <div class="relative overflow-hidden border-b border-slate-800/80 bg-slate-950 aspect-[15/8]">
+                <img src="assets/projects/dockclean-smart.svg" alt="Preview do terminal CLI DockClean Smart" width="600" height="320" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500">
+              </div>
+              <div class="p-7 pb-4">
+                <div class="flex items-center justify-between gap-2 mb-3">
+                  <span class="px-3 py-1 rounded-full text-xs font-semibold bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">
+                    Ferramenta CLI • DevOps
+                  </span>
+                  <i class="ph ph-terminal-window text-cyan-400 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">DockClean Smart</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                  Utilitário de linha de comando desenvolvido em Go para inspeção preditiva de ambientes Docker. Identifica imagens órfãs sem contêineres ativos, projeta o espaço recuperável em disco, suporta internacionalização (PT/EN) e possui arquitetura desacoplada para testes.
+                </p>
+              </div>
+            </div>
+            <div class="px-7 pb-7">
+              <div class="pt-4 border-t border-slate-800/80 flex flex-wrap gap-1.5">
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 font-mono text-[11px] border border-slate-800">Go (Golang)</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 font-mono text-[11px] border border-slate-800">Docker SDK</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 font-mono text-[11px] border border-slate-800">CLI</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 font-mono text-[11px] border border-slate-800">Unit Testing</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 font-mono text-[11px] border border-slate-800">i18n</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projeto 6: MZA Marketing -->
+          <article data-category="web" class="project-card glass-card border border-slate-800 hover:border-brand-500/50 rounded-2xl overflow-hidden flex flex-col justify-between group">
+            <div>
+              <div class="relative overflow-hidden border-b border-slate-800/80 bg-slate-950 aspect-[15/8]">
+                <img src="assets/projects/mza-marketing.svg" alt="Preview da plataforma MZA Marketing" width="600" height="320" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500">
+              </div>
+              <div class="p-7 pb-4">
+                <div class="flex items-center justify-between gap-2 mb-3">
+                  <span class="px-3 py-1 rounded-full text-xs font-semibold bg-rose-500/15 text-rose-300 border border-rose-500/30">
+                    Presença Digital & Conversão
+                  </span>
+                  <i class="ph ph-megaphone text-rose-400 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">MZA Marketing</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                  Plataforma institucional de alta conversão desenvolvida para agência especializada em posicionamento e marca pessoal. Construída com foco em carregamento instantâneo, SEO técnico avançado e telemetria completa de funil (GA4, Microsoft Clarity e Meta Pixel).
+                </p>
+              </div>
+            </div>
+            <div class="px-7 pb-7">
+              <div class="pt-4 border-t border-slate-800/80 flex flex-wrap gap-1.5">
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 font-mono text-[11px] border border-slate-800">HTML5 Semântico</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 font-mono text-[11px] border border-slate-800">CSS3 Custom</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 font-mono text-[11px] border border-slate-800">JavaScript</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 font-mono text-[11px] border border-slate-800">GA4 & Clarity</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projeto 7: Portal Executivo Thiago Mohr -->
+          <article data-category="web" class="project-card glass-card border border-slate-800 hover:border-brand-500/50 rounded-2xl overflow-hidden md:col-span-2 lg:col-span-3 group">
+            <div class="grid lg:grid-cols-12 items-center">
+              <div class="lg:col-span-5 border-b lg:border-b-0 lg:border-r border-slate-800/80 bg-slate-950 h-full flex items-center">
+                <img src="assets/projects/portfolio-executivo.svg" alt="Preview do Portal Executivo Multilíngue Thiago Mohr" width="600" height="240" loading="lazy" decoding="async" class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-500">
+              </div>
+              <div class="lg:col-span-7 p-7 flex flex-col justify-between gap-5">
+                <div class="space-y-2">
+                  <div class="flex items-center gap-3">
+                    <span class="px-3 py-1 rounded-full text-xs font-semibold bg-brand-500/15 text-brand-400 border border-brand-500/30">
+                      Portal Executivo Multilíngue
+                    </span>
+                    <span class="text-xs font-mono text-slate-400">thiagomohrs.github.io</span>
+                  </div>
+                  <h3 class="text-xl font-bold text-white">Portfólio Internacional de Liderança Técnica & Arquitetura</h3>
+                  <p class="text-slate-400 text-sm leading-relaxed">
+                    Aplicação web multilíngue (Português, Inglês e Espanhol) apresentando mais de 10 anos de trajetória em coordenação de sistemas, arquitetura de software e entregas para grandes operações de varejo e serviços financeiros. Equipada com animações GSAP, dados estruturados Schema.org e suporte PWA.
+                  </p>
+                </div>
+                <div class="pt-4 border-t border-slate-800/80 flex flex-wrap gap-1.5">
+                  <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 font-mono text-[11px] border border-slate-800">Multilíngue (PT/EN/ES)</span>
+                  <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 font-mono text-[11px] border border-slate-800">GSAP</span>
+                  <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 font-mono text-[11px] border border-slate-800">Schema.org SEO</span>
+                  <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 font-mono text-[11px] border border-slate-800">PWA</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="py-20 border-t border-slate-800/60">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <h2 class="text-3xl font-bold text-white mb-4">Tecnologias e ferramentas com as quais trabalho</h2>
-        <p class="text-slate-400">Stack adaptada para o problema: tecnologias modernas, performáticas e prontas para crescer junto com o negócio.</p>
-      </div>
-
-      <div class="flex flex-wrap justify-center gap-3">
-        <span class="px-4 py-2 rounded-full border border-slate-700 bg-slate-900 text-slate-200">React</span>
-        <span class="px-4 py-2 rounded-full border border-slate-700 bg-slate-900 text-slate-200">Next.js</span>
-        <span class="px-4 py-2 rounded-full border border-slate-700 bg-slate-900 text-slate-200">Node.js</span>
-        <span class="px-4 py-2 rounded-full border border-slate-700 bg-slate-900 text-slate-200">Python</span>
-        <span class="px-4 py-2 rounded-full border border-slate-700 bg-slate-900 text-slate-200">PHP</span>
-        <span class="px-4 py-2 rounded-full border border-slate-700 bg-slate-900 text-slate-200">PostgreSQL</span>
-        <span class="px-4 py-2 rounded-full border border-slate-700 bg-slate-900 text-slate-200">MySQL</span>
-        <span class="px-4 py-2 rounded-full border border-slate-700 bg-slate-900 text-slate-200">AWS</span>
-        <span class="px-4 py-2 rounded-full border border-slate-700 bg-slate-900 text-slate-200">Docker</span>
-        <span class="px-4 py-2 rounded-full border border-slate-700 bg-slate-900 text-slate-200">APIs REST</span>
-        <span class="px-4 py-2 rounded-full border border-slate-700 bg-slate-900 text-slate-200">SaaS</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Seção de SaaS / Produtos -->
-  <section id="produtos" class="py-20 border-t border-slate-800/60">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <h2 class="text-3xl font-bold text-white mb-4">SaaS & Produtos Próprios</h2>
-        <p class="text-slate-400">Soluções independentes desenvolvidas e mantidas pela TMS Consultoria.</p>
-      </div>
-
-      <div class="bg-brand-card border border-slate-800 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
-        <div class="space-y-4 md:w-2/3">
-          <span class="text-xs font-semibold uppercase tracking-wider text-brand-500 bg-brand-500/10 px-3 py-1 rounded-md">Em Breve</span>
-          <h3 class="text-2xl font-bold text-white">Novas ferramentas em desenvolvimento</h3>
-          <p class="text-slate-400 leading-relaxed">
-            Estamos construindo uma suíte de microsserviços e soluções SaaS focadas em produtividade empresarial e automação de processos.
+    <!-- Metodologia / Processo de Execução -->
+    <section id="metodologia" class="py-24 px-4 sm:px-6 lg:px-8 border-b border-slate-800/60">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-mono uppercase tracking-widest text-brand-400 font-semibold">Governança & Previsibilidade</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 tracking-tight">
+            Como conduzimos cada projeto do diagnóstico à operação
+          </h2>
+          <p class="text-slate-400 mt-4 text-lg">
+            Eliminamos caixas-pretas no desenvolvimento de software. Nosso método prioriza visibilidade executiva, entregas incrementais e documentação limpa.
           </p>
         </div>
-        <div>
-          <a href="https://wa.me/5548984728531?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20os%20SaaS%20da%20TMS%20Consultoria." 
-             target="_blank" 
-             class="whitespace-nowrap border border-brand-500 text-brand-500 hover:bg-brand-500 hover:text-white px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2">
-            Quero Acompanhar
-            <i class="ph ph-arrow-right"></i>
+
+        <div class="grid md:grid-cols-4 gap-6">
+          <div class="glass-card border border-slate-800 rounded-2xl p-7 relative">
+            <div class="flex items-center justify-between mb-6">
+              <span class="font-mono text-2xl font-bold text-brand-400">01</span>
+              <i class="ph ph-magnifying-glass text-2xl text-slate-500"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Imersão & Diagnóstico</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Mapeamos o fluxo operacional, identificamos gargalos técnicos e definimos indicadores claros de retorno sobre o investimento antes de escrever a primeira linha de código.
+            </p>
+          </div>
+
+          <div class="glass-card border border-slate-800 rounded-2xl p-7 relative">
+            <div class="flex items-center justify-between mb-6">
+              <span class="font-mono text-2xl font-bold text-brand-400">02</span>
+              <i class="ph ph-blueprint text-2xl text-slate-500"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Arquitetura & Escopo</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Estruturamos o modelo de dados, contratos de API, requisitos de segurança e cronograma executivo com entregas parciais validáveis.
+            </p>
+          </div>
+
+          <div class="glass-card border border-slate-800 rounded-2xl p-7 relative">
+            <div class="flex items-center justify-between mb-6">
+              <span class="font-mono text-2xl font-bold text-brand-400">03</span>
+              <i class="ph ph-code-block text-2xl text-slate-500"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Engenharia & Homologação</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Desenvolvimento em ciclos ágeis com código revisado, testes automatizados, verificação de segurança e demonstrações frequentes para os stakeholders.
+            </p>
+          </div>
+
+          <div class="glass-card border border-slate-800 rounded-2xl p-7 relative">
+            <div class="flex items-center justify-between mb-6">
+              <span class="font-mono text-2xl font-bold text-brand-400">04</span>
+              <i class="ph ph-rocket-launch text-2xl text-slate-500"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Deploy & Evolução</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Publicação assistida em produção, monitoramento de logs e performance, transferência de conhecimento e suporte contínuo para evolução do produto.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stack Tecnológica -->
+    <section id="stack" class="py-24 px-4 sm:px-6 lg:px-8 bg-brand-surface/40 border-b border-slate-800/60">
+      <div class="max-w-7xl mx-auto">
+        <div class="max-w-3xl mb-14">
+          <span class="text-xs font-mono uppercase tracking-widest text-brand-400 font-semibold">Capacidade Técnica</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 tracking-tight">
+            Ecossistema tecnológico maduro e pronto para escala
+          </h2>
+          <p class="text-slate-400 mt-3 text-lg">
+            Selecionamos a ferramenta certa para cada desafio arquitetural, priorizando estabilidade a longo prazo, facilidade de manutenção e baixa latência.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-6">
+            <div class="flex items-center gap-2.5 text-white font-bold mb-4">
+              <i class="ph ph-browsers text-brand-400 text-xl"></i>
+              <span>Frontend & Mobile</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-300">React</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-300">Next.js</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-300">TypeScript</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-300">Tailwind CSS</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-300">PWA</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-300">CarPlay / Android Auto</span>
+            </div>
+          </div>
+
+          <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-6">
+            <div class="flex items-center gap-2.5 text-white font-bold mb-4">
+              <i class="ph ph-hard-drives text-brand-400 text-xl"></i>
+              <span>Backend & APIs</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-300">Java 21 / Spring Boot</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-300">Node.js</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-300">Go (Golang)</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-300">Python</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-300">REST & WebSockets</span>
+            </div>
+          </div>
+
+          <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-6">
+            <div class="flex items-center gap-2.5 text-white font-bold mb-4">
+              <i class="ph ph-database text-brand-400 text-xl"></i>
+              <span>Dados & Inteligência Artificial</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-300">PostgreSQL</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-300">MySQL</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-300">Redis</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-300">Gemini API / Live API</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-300">Integrações LLM</span>
+            </div>
+          </div>
+
+          <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-6">
+            <div class="flex items-center gap-2.5 text-white font-bold mb-4">
+              <i class="ph ph-cloud-check text-brand-400 text-xl"></i>
+              <span>Cloud & DevSecOps</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-300">AWS</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-300">Docker</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-300">CI/CD Actions</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-300">Vercel / Serverless</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-300">Linux & Shell</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre a Consultoria -->
+    <section id="empresa" class="py-24 px-4 sm:px-6 lg:px-8 border-b border-slate-800/60">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-3">
+            <img src="assets/logo.png" alt="Ícone TMS Consultoria" width="44" height="44" loading="lazy" class="w-11 h-11 rounded-xl shadow-md">
+            <span class="text-xs font-mono uppercase tracking-widest text-brand-400 font-semibold">Sobre a TMS Consultoria</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Visão de liderança técnica aliada à capacidade de execução
+          </h2>
+          <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+            A <strong>TMS Consultoria</strong> é liderada por <strong>Thiago Mohr da Silveira</strong>, especialista em engenharia de software e coordenação de sistemas com sólida trajetória em operações críticas de serviços financeiros, meios de pagamento e varejo.
+          </p>
+          <p class="text-slate-400 text-base leading-relaxed">
+            Atuamos como parceiro estratégico para empresas que buscam mais do que apenas codificação: entregamos diagnóstico arquitetural preciso, redução de dívida técnica, automação de processos operacionais e produtos digitais prontos para crescer sem retrabalho.
+          </p>
+
+          <div class="pt-2 flex flex-wrap gap-6 text-sm text-slate-300">
+            <div class="flex items-center gap-2">
+              <i class="ph-fill ph-check-square text-brand-400 text-lg"></i>
+              <span>Comunicação executiva direta</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="ph-fill ph-check-square text-brand-400 text-lg"></i>
+              <span>Contratos B2B com SLA e confidencialidade</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="ph-fill ph-check-square text-brand-400 text-lg"></i>
+              <span>Arquitetura preparada para escala</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 grid grid-cols-2 gap-4">
+          <div class="glass-card p-6 rounded-2xl border border-slate-800">
+            <i class="ph ph-briefcase text-2xl text-brand-400 mb-3 block"></i>
+            <p class="text-3xl font-extrabold text-white mb-1">+10 anos</p>
+            <p class="text-slate-400 text-xs sm:text-sm">Atuação em Tecnologia, Finanças e Varejo</p>
+          </div>
+          <div class="glass-card p-6 rounded-2xl border border-slate-800">
+            <i class="ph ph-stack text-2xl text-brand-400 mb-3 block"></i>
+            <p class="text-3xl font-extrabold text-white mb-1">Full Cycle</p>
+            <p class="text-slate-400 text-xs sm:text-sm">Arquitetura, Backend, Frontend e Cloud</p>
+          </div>
+          <div class="glass-card p-6 rounded-2xl border border-slate-800">
+            <i class="ph ph-lock-key text-2xl text-brand-400 mb-3 block"></i>
+            <p class="text-3xl font-extrabold text-white mb-1">Segurança</p>
+            <p class="text-slate-400 text-xs sm:text-sm">Boas práticas de governança e proteção de dados</p>
+          </div>
+          <div class="glass-card p-6 rounded-2xl border border-slate-800">
+            <i class="ph ph-handshake text-2xl text-brand-400 mb-3 block"></i>
+            <p class="text-3xl font-extrabold text-white mb-1">B2B / PJ</p>
+            <p class="text-slate-400 text-xs sm:text-sm">Flexibilidade para projetos fechados ou alocação</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Executivo Final -->
+    <section class="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <div class="max-w-5xl mx-auto glass-card border border-brand-500/30 rounded-3xl p-8 sm:p-14 text-center relative overflow-hidden shadow-2xl">
+        <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-brand-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <img src="assets/logo-mark.png" alt="TMS Consultoria" width="90" height="40" loading="lazy" class="h-8 w-auto mx-auto mb-4 logo-glow">
+        <span class="text-xs font-mono uppercase tracking-widest text-brand-400 font-semibold block">Próximo Passo</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 max-w-2xl mx-auto tracking-tight">
+          Vamos estruturar o próximo projeto ou reforçar a engenharia da sua empresa?
+        </h2>
+        <p class="text-slate-300 mt-4 max-w-xl mx-auto text-base sm:text-lg">
+          Entre em contato para agendar uma conversa técnica sem compromisso. Avaliamos seu cenário atual e apresentamos o melhor caminho de implementação.
+        </p>
+
+        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="https://wa.me/5548984728531?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20TMS%20Consultoria%20e%20gostaria%20de%20conversar%20sobre%20uma%20demanda%20t%C3%A9cnica."
+             target="_blank"
+             rel="noopener noreferrer"
+             class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-brand-500 hover:bg-brand-600 text-white px-8 py-4 rounded-xl font-bold text-base shadow-xl shadow-brand-500/25 transition-all">
+            <i class="ph-fill ph-whatsapp-logo text-xl"></i>
+            Falar Diretamente via WhatsApp
+          </a>
+          <a href="#projetos"
+             class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl border border-slate-700 hover:border-slate-500 text-slate-200 font-semibold text-base transition-all">
+            Explorar Portfólio
           </a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- Seção Sobre -->
-  <section id="sobre" class="py-20 border-t border-slate-800/60 bg-slate-950/40">
-    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row gap-12 items-center">
-      <div class="md:w-1/2 space-y-6">
-        <h2 class="text-3xl font-bold text-white">Sobre a TMS Consultoria</h2>
-        <p class="text-slate-400 leading-relaxed">
-          A TMS Consultoria nasceu para entregar código limpo, arquiteturas robustas e soluções de software que resolvem dores reais de empresas. 
-        </p>
-        <p class="text-slate-400 leading-relaxed">
-          Atuando diretamente no desenvolvimento de sistemas web e soluções sob medida, o foco é sempre garantir prazos, transparência na comunicação e alta qualidade técnica.
-        </p>
-      </div>
-      <div class="md:w-1/2 grid grid-cols-2 gap-4 w-full">
-        <div class="bg-brand-card p-6 rounded-2xl border border-slate-800 text-center">
-          <p class="text-3xl font-extrabold text-brand-500 mb-1">+7 anos</p>
-          <p class="text-slate-400 text-sm">Experiência Tech</p>
-        </div>
-        <div class="bg-brand-card p-6 rounded-2xl border border-slate-800 text-center">
-          <p class="text-3xl font-extrabold text-brand-500 mb-1">Full Stack</p>
-          <p class="text-slate-400 text-sm">Especialização</p>
-        </div>
-        <div class="bg-brand-card p-6 rounded-2xl border border-slate-800 text-center">
-          <p class="text-3xl font-extrabold text-brand-500 mb-1">100%</p>
-          <p class="text-slate-400 text-sm">Foco em Resultados</p>
-        </div>
-        <div class="bg-brand-card p-6 rounded-2xl border border-slate-800 text-center">
-          <p class="text-3xl font-extrabold text-brand-500 mb-1">PJ</p>
-          <p class="text-slate-400 text-sm">Contratação Direta</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-20 border-t border-slate-800/60 bg-slate-950/40">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <h2 class="text-3xl font-bold text-white mb-4">Resultados que entregamos</h2>
-        <p class="text-slate-400">Estratégia técnica focada em clareza, velocidade e crescimento sustentável para o negócio.</p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-brand-card border border-slate-800 rounded-2xl p-8 text-center">
-          <div class="text-4xl mb-4">⚙️</div>
-          <h3 class="text-xl font-bold text-white mb-3">Processos automatizados</h3>
-          <p class="text-slate-400 leading-relaxed">Elimino tarefas manuais e reduzimos gargalos operacionais com fluxos digitais bem estruturados.</p>
-        </div>
-        <div class="bg-brand-card border border-slate-800 rounded-2xl p-8 text-center">
-          <div class="text-4xl mb-4">📈</div>
-          <h3 class="text-xl font-bold text-white mb-3">Mais produtividade</h3>
-          <p class="text-slate-400 leading-relaxed">Ferramentas e sistemas pensados para acelerar decisões, melhorar a execução e entregar mais valor.</p>
-        </div>
-        <div class="bg-brand-card border border-slate-800 rounded-2xl p-8 text-center">
-          <div class="text-4xl mb-4">🚀</div>
-          <h3 class="text-xl font-bold text-white mb-3">SaaS e escalabilidade</h3>
-          <p class="text-slate-400 leading-relaxed">Estruturas que crescem com a operação, com arquitetura preparada para manutenção e expansão.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Final -->
-  <section class="py-20 border-t border-slate-800/60 text-center px-4">
-    <div class="max-w-3xl mx-auto space-y-6">
-      <h2 class="text-3xl md:text-4xl font-bold text-white">Precisa de um desenvolvedor PJ ou de um sistema sob medida?</h2>
-      <p class="text-slate-400">Vamos conversar sobre a sua demanda técnica e estruturar a melhor solução.</p>
-      <div class="pt-4">
-        <a href="https://wa.me/5548984728531?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20TMS%20Consultoria%20e%20gostaria%20de%20um%20or%C3%A7amento." 
-           target="_blank" 
-           class="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg shadow-brand-500/20 transition-all">
-          <i class="ph ph-whatsapp-logo text-2xl"></i>
-          Falar via WhatsApp
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <a href="https://wa.me/5548984728531?text=Ol%C3%A1!%20Gostaria%20de%20falar%20sobre%20um%20projeto%20com%20a%20TMS%20Consultoria." 
+  <!-- Floating WhatsApp Action -->
+  <a href="https://wa.me/5548984728531?text=Ol%C3%A1!%20Gostaria%20de%20falar%20sobre%20um%20projeto%20com%20a%20TMS%20Consultoria."
      target="_blank"
-     class="fixed bottom-6 right-6 z-50 flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe5b] text-white rounded-full shadow-2xl shadow-green-500/30 px-5 py-3 font-semibold transition-all">
-    <i class="ph ph-whatsapp-logo text-2xl"></i>
-    <span class="hidden sm:inline">WhatsApp</span>
+     rel="noopener noreferrer"
+     aria-label="Iniciar conversa no WhatsApp"
+     class="fixed bottom-6 right-6 z-50 flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe5b] text-white rounded-full shadow-2xl shadow-green-500/30 px-5 py-3.5 font-semibold transition-all hover:scale-105">
+    <i class="ph-fill ph-whatsapp-logo text-2xl"></i>
+    <span class="hidden sm:inline text-sm">Falar com Consultor</span>
   </a>
 
   <!-- Footer -->
-  <footer class="border-t border-slate-800/80 py-8 text-center text-slate-500 text-sm">
-    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
-      <p>© 2026 TMS Consultoria. Todos os direitos reservados.</p>
-      <div class="flex items-center gap-4">
-        <a href="#servicos" class="hover:text-brand-500 transition-colors">Serviços</a>
-        <a href="#produtos" class="hover:text-brand-500 transition-colors">Produtos</a>
-        <a href="#sobre" class="hover:text-brand-500 transition-colors">Sobre</a>
+  <footer class="border-t border-slate-800/80 bg-slate-950/60 py-12 text-slate-400 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-3.5">
+        <div class="flex items-center justify-center h-10 px-2.5 rounded-xl bg-slate-900 border border-slate-800">
+          <img src="assets/logo-mark.png" alt="Logo TMS Consultoria" width="64" height="28" loading="lazy" class="h-5 w-auto object-contain">
+        </div>
+        <div>
+          <p class="text-white font-bold leading-none">TMS Consultoria</p>
+          <p class="text-xs text-slate-500 mt-1">Engenharia de Software, Arquitetura & Soluções Digitais</p>
+        </div>
       </div>
+
+      <div class="flex flex-wrap justify-center items-center gap-6 text-xs font-medium">
+        <a href="#solucoes" class="hover:text-white transition-colors">Soluções</a>
+        <a href="#projetos" class="hover:text-white transition-colors">Portfólio</a>
+        <a href="#metodologia" class="hover:text-white transition-colors">Metodologia</a>
+        <a href="#stack" class="hover:text-white transition-colors">Stack</a>
+        <a href="#empresa" class="hover:text-white transition-colors">Sobre</a>
+      </div>
+
+      <p class="text-xs text-slate-500">© 2026 TMS Consultoria. Todos os direitos reservados.</p>
     </div>
   </footer>
 
+  <!-- Interactive Scripts: Mobile Navigation, Hero Telemetry Tabs & Portfolio Filtering -->
+  <script>
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('mobile-menu-icon');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        const isHidden = mobileMenu.classList.contains('hidden');
+        mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(isHidden));
+        menuIcon.className = isHidden ? 'ph ph-x text-2xl' : 'ph ph-list text-2xl';
+      });
+
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+          menuIcon.className = 'ph ph-list text-2xl';
+        });
+      });
+    }
+
+    // Hero Interactive Tabs: architecture.ts vs telemetry.log
+    const tabSpecBtn = document.getElementById('tab-spec-btn');
+    const tabLogsBtn = document.getElementById('tab-logs-btn');
+    const panelSpec = document.getElementById('panel-spec');
+    const panelLogs = document.getElementById('panel-logs');
+
+    if (tabSpecBtn && tabLogsBtn && panelSpec && panelLogs) {
+      tabSpecBtn.addEventListener('click', () => {
+        panelSpec.classList.remove('hidden');
+        panelLogs.classList.add('hidden');
+        tabSpecBtn.className = 'px-2.5 py-1 rounded-md bg-brand-500/20 text-brand-400 font-semibold transition-all';
+        tabLogsBtn.className = 'px-2.5 py-1 rounded-md text-slate-400 hover:text-slate-200 transition-all';
+      });
+
+      tabLogsBtn.addEventListener('click', () => {
+        panelLogs.classList.remove('hidden');
+        panelSpec.classList.add('hidden');
+        tabLogsBtn.className = 'px-2.5 py-1 rounded-md bg-brand-500/20 text-brand-400 font-semibold transition-all';
+        tabSpecBtn.className = 'px-2.5 py-1 rounded-md text-slate-400 hover:text-slate-200 transition-all';
+      });
+    }
+
+    // Portfolio Category Filtering
+    const filterButtons = document.querySelectorAll('.project-filter');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+
+        filterButtons.forEach(b => {
+          b.classList.remove('bg-brand-500', 'text-white');
+          b.classList.add('bg-slate-900', 'border', 'border-slate-800', 'text-slate-300');
+        });
+        btn.classList.remove('bg-slate-900', 'border', 'border-slate-800', 'text-slate-300');
+        btn.classList.add('bg-brand-500', 'text-white');
+
+        projectCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

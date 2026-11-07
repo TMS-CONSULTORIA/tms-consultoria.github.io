@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" fill="none">
+    <rect width="600" height="320" fill="#090D16"/>
+    <circle cx="500" cy="40" r="160" fill="#0284C7" fill-opacity="0.12"/>
+    <!-- Window Frame -->
+    <rect x="28" y="24" width="544" height="272" rx="12" fill="#0F172A" stroke="#1E293B" stroke-width="1.5"/>
+    <rect x="28" y="24" width="544" height="34" rx="12" fill="#1E293B" fill-opacity="0.5"/>
+    <circle cx="48" cy="41" r="5" fill="#F43F5E"/>
+    <circle cx="64" cy="41" r="5" fill="#F59E0B"/>
+    <circle cx="80" cy="41" r="5" fill="#10B981"/>
+    <text x="104" y="45" fill="#94A3B8" font-family="monospace" font-size="11">alugapratico.app / dashboard / estoque-reservas</text>
+    <!-- Metric Cards -->
+    <rect x="48" y="76" width="156" height="68" rx="8" fill="#111827" stroke="#1E293B"/>
+    <text x="62" y="98" fill="#64748B" font-family="sans-serif" font-size="10" font-weight="600">EQUIPAMENTOS ATIVOS</text>
+    <text x="62" y="126" fill="#F8FAFC" font-family="sans-serif" font-size="22" font-weight="800">148 un.</text>
+    <text x="152" y="125" fill="#10B981" font-family="monospace" font-size="11">94% disp</text>
+    <rect x="222" y="76" width="156" height="68" rx="8" fill="#111827" stroke="#1E293B"/>
+    <text x="236" y="98" fill="#64748B" font-family="sans-serif" font-size="10" font-weight="600">LOCAÇÕES EM CURSO</text>
+    <text x="236" y="126" fill="#38BDF8" font-family="sans-serif" font-size="22" font-weight="800">42 contratos</text>
+    <rect x="396" y="76" width="156" height="68" rx="8" fill="#111827" stroke="#1E293B"/>
+    <text x="410" y="98" fill="#64748B" font-family="sans-serif" font-size="10" font-weight="600">MANUTENÇÃO PREV.</text>
+    <text x="410" y="126" fill="#F59E0B" font-family="sans-serif" font-size="22" font-weight="800">03 ordens</text>
+    <!-- Calendar / Reservation Bars -->
+    <rect x="48" y="160" width="504" height="116" rx="8" fill="#111827" stroke="#1E293B"/>
+    <text x="64" y="184" fill="#CBD5E1" font-family="sans-serif" font-size="11" font-weight="700">CRONOGRAMA DE UNIDADES FÍSICAS (MULTI-TENANT)</text>
+    <rect x="64" y="198" width="140" height="16" rx="4" fill="#0284C7" fill-opacity="0.3" stroke="#0284C7"/>
+    <text x="72" y="210" fill="#E0F2FE" font-family="monospace" font-size="9">Gerador 15kVA #04 • Locado</text>
+    <rect x="220" y="198" width="190" height="16" rx="4" fill="#10B981" fill-opacity="0.2" stroke="#10B981"/>
+    <text x="228" y="210" fill="#D1FAE5" font-family="monospace" font-size="9">Andaime Tubular Lote B • Reserva Confirmada</text>
+    <rect x="64" y="224" width="240" height="16" rx="4" fill="#0284C7" fill-opacity="0.3" stroke="#0284C7"/>
+    <text x="72" y="236" fill="#E0F2FE" font-family="monospace" font-size="9">Martelete Rompedor #11 • Contrato #892</text>
+    <rect x="320" y="224" width="160" height="16" rx="4" fill="#F59E0B" fill-opacity="0.2" stroke="#F59E0B"/>
+    <text x="328" y="236" fill="#FEF3C7" font-family="monospace" font-size="9">Betoneira 400L • Revisão</text>
+    <rect x="64" y="250" width="360" height="14" rx="4" fill="#1E293B"/>
+  </svg>

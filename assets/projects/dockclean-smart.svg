@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" fill="none">
+    <rect width="600" height="320" fill="#090D16"/>
+    <rect x="28" y="24" width="544" height="272" rx="12" fill="#0B0F19" stroke="#1E293B" stroke-width="1.5"/>
+    <rect x="28" y="24" width="544" height="32" rx="12" fill="#111827"/>
+    <circle cx="48" cy="40" r="5" fill="#F43F5E"/>
+    <circle cx="64" cy="40" r="5" fill="#F59E0B"/>
+    <circle cx="80" cy="40" r="5" fill="#10B981"/>
+    <text x="104" y="44" fill="#64748B" font-family="monospace" font-size="11">zsh — dockclean-smart -lang=pt</text>
+    <text x="48" y="84" fill="#38BDF8" font-family="monospace" font-size="12">$ dockclean-smart --analyze --lang=pt</text>
+    <text x="48" y="112" fill="#94A3B8" font-family="monospace" font-size="11">[INFO] Conectando ao Docker Engine SDK (context.Context ativo)...</text>
+    <text x="48" y="136" fill="#94A3B8" font-family="monospace" font-size="11">[SCAN] Inspecionando camadas e contêineres associados...</text>
+    <text x="48" y="168" fill="#F59E0B" font-family="monospace" font-size="11">  • node:18-alpine-old       (Containers: 0)   412.4 MB</text>
+    <text x="48" y="190" fill="#F59E0B" font-family="monospace" font-size="11">  • postgres:15-staging      (Containers: 0)   628.9 MB</text>
+    <text x="48" y="212" fill="#F59E0B" font-family="monospace" font-size="11">  • &lt;none&gt;:&lt;none&gt; build-cache (Containers: 0)  1420.2 MB</text>
+    <rect x="48" y="232" width="504" height="42" rx="8" fill="#064E3B" fill-opacity="0.35" stroke="#10B981"/>
+    <text x="64" y="258" fill="#34D399" font-family="monospace" font-size="12" font-weight="700">✓ ESPAÇO TOTAL RECUPERÁVEL ESTIMADO: 2,461.5 MB (2.40 GB)</text>
+  </svg>
