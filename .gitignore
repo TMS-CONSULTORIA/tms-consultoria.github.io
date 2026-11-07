@@ -1,0 +1,17 @@
+# OS & Editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Environment Variables & Secrets
+.env
+.env.*
+.env*.local
+!.env.example
+!**/.env.example
+*.secret
+*.key
+*.pem
+*.p12
+credentials.json
